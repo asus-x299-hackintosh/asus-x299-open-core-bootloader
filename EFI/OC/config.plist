@@ -168,8 +168,6 @@
 				<data>SEVDMQ==</data>
 				<key>Limit</key>
 				<integer>0</integer>
-				<key>Mask</key>
-				<data></data>
 				<key>OemTableId</key>
 				<data></data>
 				<key>Replace</key>
@@ -190,8 +188,6 @@
 				<integer>1</integer>
 				<key>Enabled</key>
 				<false/>
-				<key>Find</key>
-				<data>SEVDMQ==</data>
 				<key>Limit</key>
 				<integer>0</integer>
 				<key>Mask</key>
@@ -273,6 +269,32 @@
 			<key>ResetHwSig</key>
 			<false/>
 			<key>ResetLogoStatus</key>
+			<false/>
+		</dict>
+	</dict>
+	<key>Booter</key>
+	<dict>
+		<key>Quirks</key>
+		<dict>
+			<key>AvoidRuntimeDefrag</key>
+			<true/>
+			<key>DisableVariableWrite</key>
+			<false/>
+			<key>DiscardHibernateMap</key>
+			<false/>
+			<key>EnableSafeModeSlide</key>
+			<true/>
+			<key>EnableWriteUnprotector</key>
+			<true/>
+			<key>ForceExitBootServices</key>
+			<false/>
+			<key>ProtectCsmRegion</key>
+			<false/>
+			<key>ProvideCustomSlide</key>
+			<true/>
+			<key>SetupVirtualMap</key>
+			<true/>
+			<key>ShrinkMemoryMap</key>
 			<false/>
 		</dict>
 	</dict>
@@ -459,6 +481,13 @@
 		</array>
 		<key>Block</key>
 		<array/>
+		<key>Emulate</key>
+		<dict>
+			<key>Cpuid1Data</key>
+			<data></data>
+			<key>Cpuid1Mask</key>
+			<data></data>
+		</dict>
 		<key>Patch</key>
 		<array/>
 		<key>Quirks</key>
@@ -487,20 +516,22 @@
 	</dict>
 	<key>Misc</key>
 	<dict>
+		<key>BlessOverride</key>
+		<array/>
 		<key>Boot</key>
 		<dict>
 			<key>ConsoleBehaviourOs</key>
 			<string>ForceGraphics</string>
 			<key>ConsoleBehaviourUi</key>
-			<string></string>
+			<string>Text</string>
 			<key>ConsoleMode</key>
 			<string>Max</string>
 			<key>HibernateMode</key>
-			<string>Auto</string>
+			<string>None</string>
 			<key>HideSelf</key>
 			<true/>
 			<key>Resolution</key>
-			<string></string>
+			<string>Max</string>
 			<key>ShowPicker</key>
 			<true/>
 			<key>Timeout</key>
@@ -570,7 +601,7 @@
 				<key>csr-active-config</key>
 				<data>AAAAAA==</data>
 				<key>boot-args</key>
-				<string>darkwake=0 agdpmod=pikera</string>
+				<string>keepsyms=1 darkwake=0 agdpmod=pikera gfxrst=1</string>
 				<key>prev-lang:kbd</key>
 				<string>en_AU:15</string>
 			</dict>
@@ -586,11 +617,13 @@
 				<string>boot-args</string>
 			</array>
 		</dict>
+		<key>LegacyEnable</key>
+		<false/>
 	</dict>
 	<key>PlatformInfo</key>
 	<dict>
 		<key>Automatic</key>
-		<false/>
+		<true/>
 		<key>Generic</key>
 		<dict>
 			<key>SpoofVendor</key>
@@ -598,110 +631,13 @@
 			<key>SystemProductName</key>
 			<string>iMacPro1,1</string>
 			<key>SystemSerialNumber</key>
-			<string>!!!! FILL THIS IN !!!!!</string>
+			<string>!!! FILL THIS IN !!!</string>
 			<key>SystemUUID</key>
-			<string>!!!! FILL THIS IN !!!!!</string>
+			<string>!!! FILL THIS IN !!!</string>
 			<key>MLB</key>
-			<string>!!!! FILL THIS IN !!!!!</string>
+			<string>!!! FILL THIS IN !!!</string>
 			<key>ROM</key>
-			<data>GDG/JcpZ</data>
-		</dict>
-		<key>DataHub</key>
-		<dict>
-			<key>PlatformName</key>
-			<string>platform</string>
-			<key>SystemProductName</key>
-			<string>iMacPro1,1</string>
-			<key>SystemSerialNumber</key>
-			<string>!!!! FILL THIS IN !!!!!</string>
-			<key>SystemUUID</key>
-			<string>!!!! FILL THIS IN !!!!!</string>
-			<key>BoardProduct</key>
-			<string>Mac-7BA5B2D9E42DDD94</string>
-			<key>BoardRevision</key>
-			<data>AQ==</data>
-			<key>StartupPowerEvents</key>
-			<integer>0</integer>
-			<key>InitialTSC</key>
-			<integer>0</integer>
-			<key>FSBFrequency</key>
-			<integer>0</integer>
-			<key>DevicePathsSupported</key>
-			<data>AQ==</data>
-			<key>SmcBranch</key>
-			<data>ajEzNw==</data>
-			<key>SmcPlatform</key>
-			<data>ajEzNw==</data>
-			<key>SmcRevision</key>
-			<data>AgBBAA8A</data>
-		</dict>
-		<key>PlatformNVRAM</key>
-		<dict>
-			<key>BID</key>
-			<string>Mac-7BA5B2D9E42DDD94</string>
-			<key>ROM</key>
-			<data>GDG/JcpZ</data>
-			<key>MLB</key>
-			<string>!!!! FILL THIS IN !!!!!</string>
-			<key>FirmwareFeatures</key>
-			<data>/Y/1Pw==</data>
-			<key>FirmwareFeaturesMask</key>
-			<data>/5//Pw==</data>
-		</dict>
-		<key>SMBIOS</key>
-		<dict>
-			<key>BIOSVendor</key>
-			<string>Apple Inc.</string>
-			<key>BIOSVersion</key>
-			<string>IMP11.88Z.0064.B30.1712081714</string>
-			<key>BIOSReleaseDate</key>
-			<string>12/08/2017</string>
-			<key>SystemManufacturer</key>
-			<string></string>
-			<key>SystemProductName</key>
-			<string>iMacPro1,1</string>
-			<key>SystemVersion</key>
-			<string>1.0</string>
-			<key>SystemSerialNumber</key>
-			<string>!!!! FILL THIS IN !!!!!</string>
-			<key>SystemUUID</key>
-			<string>!!!! FILL THIS IN !!!!!</string>
-			<key>SystemSKUNumber</key>
-			<string>Mac-7BA5B2D9E42DDD94</string>
-			<key>SystemFamily</key>
-			<string>iMac Pro</string>
-			<key>BoardManufacturer</key>
-			<string></string>
-			<key>BoardProduct</key>
-			<string>Mac-7BA5B2D9E42DDD94</string>
-			<key>BoardVersion</key>
-			<string>1.0</string>
-			<key>BoardSerialNumber</key>
-			<string>!!!! FILL THIS IN !!!!!</string>
-			<key>BoardType</key>
-			<integer>10</integer>
-			<key>BoardLocationInChassis</key>
-			<string>Part Component</string>
-			<key>ChassisManufacturer</key>
-			<string></string>
-			<key>ChassisType</key>
-			<integer>9</integer>
-			<key>ChassisVersion</key>
-			<string>Mac-7BA5B2D9E42DDD94</string>
-			<key>ChassisSerialNumber</key>
-			<string>!!!! FILL THIS IN !!!!!</string>
-			<key>ChassisAssetTag</key>
-			<string>iMacPro-Aluminum</string>
-			<key>PlatformFeature</key>
-			<integer>65535</integer>
-			<key>FirmwareFeatures</key>
-			<data>/Y/1Pw==</data>
-			<key>FirmwareFeaturesMask</key>
-			<data>/5//Pw==</data>
-			<key>ProcessorType</key>
-			<integer>3841</integer>
-			<key>MemoryFormFactor</key>
-			<integer>9</integer>
+			<string>{length = 0, bytes = 0x}</string>
 		</dict>
 		<key>UpdateDataHub</key>
 		<true/>
@@ -720,8 +656,8 @@
 		<array>
 			<string>ApfsDriverLoader.efi</string>
 			<string>AppleUiSupport.efi</string>
-			<string>AptioInputFix.efi</string>
-			<string>AptioMemoryFix.efi</string>
+			<string>AppleGenericInput.efi</string>
+			<string>FwRuntimeServices.efi</string>
 			<string>HFSPlus.efi</string>
 			<string>VirtualSmc.efi</string>
 		</array>
@@ -738,6 +674,8 @@
 		</dict>
 		<key>Quirks</key>
 		<dict>
+			<key>AvoidHighAlloc</key>
+			<false/>
 			<key>ExitBootServicesDelay</key>
 			<integer>0</integer>
 			<key>IgnoreInvalidFlexRatio</key>
@@ -751,7 +689,7 @@
 			<key>RequestBootVarRouting</key>
 			<true/>
 			<key>SanitiseClearScreen</key>
-			<false/>
+			<true/>
 		</dict>
 	</dict>
 </dict>
